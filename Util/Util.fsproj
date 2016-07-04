@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Bool.fs" />
     <Compile Include="U.fs" />
   </ItemGroup>
   <PropertyGroup>
