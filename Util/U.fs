@@ -8,6 +8,9 @@ open System.IO
 open System.Net
 open System.Transactions
 
+// Explanatory wrapper
+let unSome (x: 'T option) = x.Value
+
 let readAllBytes (stream : Stream) =
     use ms = new MemoryStream()
     stream.CopyTo(ms)
@@ -20,22 +23,27 @@ let ftpDownloadBinary (url : string) (user : string) (password : string) outputP
     use s = wr.GetResponseStream()
     File.WriteAllBytes(outputPath, readAllBytes(s))
 
-let startProcess fileName (argument : string option) =
+let startProcess fileName (arguments : string option) =
     let psi =
-        match argument with
-        | Some arg -> ProcessStartInfo(fileName, arg)
+        match arguments with
+        | Some args -> ProcessStartInfo(fileName, args)
         | None -> ProcessStartInfo(fileName)
     
-    psi.UseShellExecute <- false
     psi.CreateNoWindow <- true
-    psi.WindowStyle <- ProcessWindowStyle.Minimized
+    psi.UseShellExecute <- false
+    psi.WindowStyle <- ProcessWindowStyle.Hidden
+    psi.RedirectStandardInput <- true
+    psi.RedirectStandardOutput <- true
     psi.RedirectStandardError <- true
 
-    use p = Process.Start(psi)
+    let p = Process.Start(psi)
+
     p.WaitForExit()
 
     if p.ExitCode <> 0 then
         failwithf "%A" (p.StandardError.ReadToEnd())
+
+    p.StandardOutput.ReadToEnd()
 
 let uncompressZ path =
     startProcess "7z.exe" (Some (sprintf @"e -y -o ""%s"" ""%s.Z""" (Path.GetTempPath()) path))

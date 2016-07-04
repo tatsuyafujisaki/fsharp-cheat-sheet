@@ -1,8 +1,12 @@
 ﻿module Bool
 
-let isNumeric x =
-    System.Double.TryParse x |> fst
-    
+open System
+
+// Explanatory wrapper
+let isSome (x: 'T option) = x.IsSome
+
+let isNumeric x = Double.TryParse x |> fst
+
 let isCommentLine (s : string) =
     s.TrimStart().[0] = '#'
 
