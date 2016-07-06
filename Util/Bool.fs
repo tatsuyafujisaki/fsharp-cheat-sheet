@@ -7,6 +7,9 @@ let isSome (x: 'T option) = x.IsSome
 
 let isNumeric x = Double.TryParse x |> fst
 
+let caseInsensitiveContains (s : string) findMe =
+    -1 < s.IndexOf(findMe, StringComparison.OrdinalIgnoreCase)
+
 let isCommentLine (s : string) =
     s.TrimStart().[0] = '#'
 

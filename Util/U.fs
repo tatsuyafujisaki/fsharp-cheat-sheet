@@ -104,3 +104,8 @@ let importToDb connectionString tableName (dt : DataTable) =
         ts.Complete()
     with
         e -> failwithf "%A%A" e.Message e.StackTrace
+              
+let blockProductionAccess (connectionString : string) =
+    let productionDatabase = "productionDatabase1"
+    if System.Diagnostics.Debugger.IsAttached && -1 < connectionString.IndexOf(productionDatabase) then
+        raise (InvalidOperationException("You cannot access production database from Visual Studio."))
