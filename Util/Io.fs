@@ -1,7 +1,36 @@
 ﻿module Io
 
+open System
 open System.IO
 open Process1
+
+let rec readName () =
+    printf "Enter name: "
+    match Console.ReadLine().Trim() with
+    | "" -> readName ()
+    | s -> s
+
+let rec readAge () =
+    printf "Enter age: "
+    match Int32.TryParse(Console.ReadLine()) with
+    | true, n when n > 0 -> n
+    | _ -> readAge ()
+
+let readValues () =
+    let rec readValues' vs =
+        printf "Enter a value, or press enter to end: "
+        match Console.ReadLine() with
+        | "" -> List.rev vs
+        | s -> match Double.TryParse(s) with
+               | true, v -> v :: vs
+               | _ -> vs
+               |> readValues'
+    readValues' []
+
+let rec readFilePath () =
+    printf "Enter file path: "
+    let filePath = Console.ReadLine()
+    if File.Exists(filePath) then filePath else readFilePath ()
 
 let rec print xs =
     match xs with
