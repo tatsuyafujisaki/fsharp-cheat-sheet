@@ -75,26 +75,6 @@ Seq.cast<'T> ie
 dt.Rows |> Seq.cast<DataRow> |> Seq.iter (fun dr -> /* Do something */)
 ```
 
-###### Convert a datatable to a list of array
-```fsharp
-let toListOfArray (dt: DataTable) =
-    dt.AsEnumerable()
-    |> Seq.map (fun dr -> dr.ItemArray)
-    |> List.ofSeq
-```
-
-###### Convert a datatable to a list of record
-```fsharp
-type Record1 = { field1 : string; field2 : string; field3 : string }
-
-let toListOfRecord (dt: DataTable) =
-    dt.AsEnumerable()
-    |> Seq.map (fun dr ->
-        let xs = dr.ItemArray |> Array.map (fun x -> string x)
-        { field1 = xs.[0]; field2 = xs.[1]; field3 = xs.[2]; })
-    |> List.ofSeq
-```
-
 ###### List manipulation
 ```fsharp
 let xs = [ 1 .. 10 ]
