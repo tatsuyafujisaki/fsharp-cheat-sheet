@@ -5,7 +5,7 @@ open log4net
 [<EntryPoint>]
 let main argv = 
    match argv with
-   | [|first|] ->
+   | [|_|] ->
        let logger = LogManager.GetLogger("Main")
        logger.Error "Ouch!"
        
