@@ -5,16 +5,16 @@
 - [F# Component Design Guidelines](http://fsharp.org/specs/component-design-guidelines)
 
 ###### MSDN for F# #
-- [Debugging F#](https://msdn.microsoft.com/en-us/library/vstudio/ee843932.aspx)
-- [Code Formatting Guidelines (F#)](https://msdn.microsoft.com/en-us/library/dd233191.aspx)
-- [Symbol and Operator Reference (F#)](https://msdn.microsoft.com/en-us/library/dd233228.aspx)
-- [Constraints (F#)](https://msdn.microsoft.com/en-us/library/dd233203.aspx)
-- [Casting and Conversions (F#)](https://msdn.microsoft.com/en-us/library/dd233220.aspx)
-- [Core.Operators Module (F#)](https://msdn.microsoft.com/en-us/library/ee353754.aspx)
-- [Core.Printf Module (F#)](https://msdn.microsoft.com/en-us/library/ee370560.aspx)
-- [Computation Expressions (F#)](https://msdn.microsoft.com/en-us/library/dd233182.aspx)
-- [Statically Resolved Type Parameters (F#)](https://msdn.microsoft.com/en-us/library/dd548046.aspx)
-- [Tail calls in F#](http://blogs.msdn.com/b/fsharpteam/archive/2011/07/08/tail-calls-in-fsharp.aspx)
+- [Casting and Conversions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/casting-and-conversions-%5bfsharp%5d)
+- [Code Formatting Guidelines](https://msdn.microsoft.com/visualfsharpdocs/conceptual/code-formatting-guidelines-%5bfsharp%5d)
+- [Computation Expressions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/computation-expressions-%5bfsharp%5d)
+- [Constraints](https://msdn.microsoft.com/visualfsharpdocs/conceptual/constraints-%5bfsharp%5d)
+- [Core.Operators Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.operators-module-%5bfsharp%5d)
+- [Core.Printf Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.printf-module-%5bfsharp%5d)
+- [Debugging F#](https://msdn.microsoft.com/en-us/library/ee843932.aspx)
+- [Statically Resolved Type Parameters](https://msdn.microsoft.com/visualfsharpdocs/conceptual/statically-resolved-type-parameters-%5bfsharp%5d)
+- [Symbol and Operator Reference](https://msdn.microsoft.com/visualfsharpdocs/conceptual/symbol-and-operator-reference-%5bfsharp%5d)
+- [Tail calls in F#](https://blogs.msdn.microsoft.com/fsharpteam/2011/07/08/tail-calls-in-f/)
 
 ###### Tutorials in Visual Studio Gallery
 - [F# Introduction Tutorial - Visual Studio 2010](https://code.msdn.microsoft.com/windowsdesktop/F-Introduction-Tutorial-1707e309)
@@ -43,10 +43,6 @@ type Rank =
           yield Queen
           yield King ]
 ```
-
-###### Type parameter
-* ^T: Type parameter resolved at compile time
-* 'T: Type parameter resolved at run time
 
 ###### Pattern matching on records
 ```fsharp
