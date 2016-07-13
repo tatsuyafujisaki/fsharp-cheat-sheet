@@ -26,6 +26,9 @@
 - [Introductory Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=MicroSamples)
 - [F# 3.0 Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=FSharp3Samples)
 
+###### Best practices
+- Add "--warnon:1182" to Project Properties > Build > Other flags
+
 ###### Discriminated union
 can have static members such as:
 ```fsharp
