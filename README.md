@@ -27,7 +27,8 @@
 - [F# 3.0 Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=FSharp3Samples)
 
 ###### Best practices
-- Add "--warnon:1182" to Project Properties > Build > Other flags
+- Project Properties > Build > Other flags > Add "--warnon:1182"
+- Project Properties > Build > Treat warnings as errors > All
 
 ###### Discriminated union
 can have static members such as:
