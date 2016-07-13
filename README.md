@@ -2,7 +2,6 @@
 
 ###### fsharp.org
 - [F# Language Specification](http://fsharp.org/specs/language-spec)
-- [F# Community Projects](http://fsharp.org/community/projects)
 - [F# Component Design Guidelines](http://fsharp.org/specs/component-design-guidelines)
 
 ###### MSDN for F# #
@@ -26,12 +25,6 @@
 - New Project > Templates > Visual F# > Tutorial
 - [Introductory Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=MicroSamples)
 - [F# 3.0 Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=FSharp3Samples)
-
-###### F# Interactive
-https://msdn.microsoft.com/en-us/library/dd233175.aspx
-```batch
-"%ProgramFiles(x86)%\Microsoft SDKs\F#\4.0\Framework\v4.0\Fsi.exe"
-```
 
 ###### Discriminated union
 can have static members such as:
