@@ -4,7 +4,7 @@
 - [F# Language Specification](http://fsharp.org/specs/language-spec)
 - [F# Component Design Guidelines](http://fsharp.org/specs/component-design-guidelines)
 
-###### MSDN for F# #
+###### MSDN (except collections)
 - [Access Control](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/access-control-%5Bfsharp%5D)
 - [Casting and Conversions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/casting-and-conversions-%5bfsharp%5d)
 - [Code Formatting Guidelines](https://msdn.microsoft.com/visualfsharpdocs/conceptual/code-formatting-guidelines-%5bfsharp%5d)
@@ -17,6 +17,16 @@
 - [Statically Resolved Type Parameters](https://msdn.microsoft.com/visualfsharpdocs/conceptual/statically-resolved-type-parameters-%5bfsharp%5d)
 - [Symbol and Operator Reference](https://msdn.microsoft.com/visualfsharpdocs/conceptual/symbol-and-operator-reference-%5bfsharp%5d)
 - [Tail calls in F#](https://blogs.msdn.microsoft.com/fsharpteam/2011/07/08/tail-calls-in-f/)
+
+###### Collections
+- [Collections.Array Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array-module-%5bfsharp%5d)
+- [Collections.List Module](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d)
+- [Collections.List<'T> Union](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.list%5b't%5d-union-%5bfsharp%5d)
+- [Collections.Map Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.map-module-%5bfsharp%5d)
+- [Collections.Map<'Key,'Value> Class](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.map%5b'key,'value%5d-class-%5bfsharp%5d)
+- [Collections.Seq Module](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.seq-module-%5bfsharp%5d)
+- [Collections.Set Module](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.set-module-%5bfsharp%5d)
+- [Collections.Set<'T> Class](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.set%5B't%5D-class-%5Bfsharp%5D)
 
 ###### Tutorials in Visual Studio Gallery
 - [F# Introduction Tutorial - Visual Studio 2010](https://code.msdn.microsoft.com/windowsdesktop/F-Introduction-Tutorial-1707e309)
