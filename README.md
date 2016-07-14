@@ -7,6 +7,7 @@
 ###### MSDN for F# #
 - [Casting and Conversions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/casting-and-conversions-%5bfsharp%5d)
 - [Code Formatting Guidelines](https://msdn.microsoft.com/visualfsharpdocs/conceptual/code-formatting-guidelines-%5bfsharp%5d)
+- [Compiler Options](https://msdn.microsoft.com/visualfsharpdocs/conceptual/compiler-options-%5bfsharp%5d)
 - [Computation Expressions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/computation-expressions-%5bfsharp%5d)
 - [Constraints](https://msdn.microsoft.com/visualfsharpdocs/conceptual/constraints-%5bfsharp%5d)
 - [Core.Operators Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.operators-module-%5bfsharp%5d)
@@ -27,8 +28,12 @@
 - [F# 3.0 Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=FSharp3Samples)
 
 ###### Best practices
-- Project Properties > Build > Other flags > Add "--warnon:1182"
-- Project Properties > Build > Treat warnings as errors > All
+- Project Properties > Build
+  - Other flags > "--warnon:1182"
+  - Treat warnings as errors > All
+- Open fsproj, and set the value of <DebugType> to
+  - "pdbonly" in the debug configuration
+  - "none" in the release configuration
 
 ###### Discriminated union
 can have static members such as:
