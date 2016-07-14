@@ -5,6 +5,9 @@ open System
 // Explanatory wrapper
 let isSome (x: 'T option) = x.IsSome
 
+// Explanatory wrapper
+let isEmpty xs = Array.isEmpty xs
+
 let isNumeric x = Double.TryParse x |> fst
 
 let caseInsensitiveContains (s : string) findMe =
