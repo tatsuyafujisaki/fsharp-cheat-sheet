@@ -46,6 +46,42 @@
   - "pdbonly" in the debug configuration
   - "none" in the release configuration
 
+###### Array
+```fsharp
+let xs = [| 1 .. 5 |]
+
+// Use properties rather than functions
+printfn "%A" (xs.Length) // Simpler than (Array.length xs)
+printfn "%A" (xs.[2]) // Simpler than (Array.get xs 2)
+```
+
+###### List
+```fsharp
+let xs = [ 1 .. 5 ]
+
+// Use properties rather than functions
+printfn "%A" (xs.IsEmpty) // Simpler than (List.isEmpty xs)
+printfn "%A" (xs.Length) // Simpler than (List.length xs)
+printfn "%A" (xs.Head) // Simpler than (List.head xs)
+printfn "%A" (xs.Tail) // Simpler than (List.tail xs)
+printfn "%A" (xs.[2]) // Simpler than (xs.Item 2) or (List.item 2 xs)
+```
+
+###### How to initialize a map
+```fsharp
+let m = Map.ofList [ 1, "one"; 2, "two" ]
+```
+
+###### How to initialize a seq
+```fsharp
+let xs = seq { 0 .. 5 }
+```
+
+###### How to initialize a dictionary of .NET Framework
+```fsharp
+let d = dict [ 1, "one"; 2, "two" ]
+```
+
 ###### Discriminated union
 can have static members such as:
 ```fsharp
@@ -82,24 +118,4 @@ Seq.cast<'T> ie
 ###### How to iterate through DataRowCollection
 ```fsharp
 dt.Rows |> Seq.cast<DataRow> |> Seq.iter (fun dr -> /* Do something */)
-```
-
-###### List manipulation
-```fsharp
-let xs = [ 1 .. 10 ]
-
-printfn "%A" (xs.IsEmpty) // Better than (List.isEmpty xs)
-printfn "%A" (xs.Length) // Better than (List.length xs)
-printfn "%A" (xs.Head) // Better than (List.head xs)
-printfn "%A" (xs.Tail) // Better than (List.tail xs)
-printfn "%A" (xs.[2]) // Better than xs.Item(2) or (List.item 2 xs)
-```
-
-###### Array manipulation
-```fsharp
-let ys = [| 1 .. 10 |]
- 
-printfn "%A" (Array.isEmpty ys)
-printfn "%A" (ys.Length) // Better than (Array.length ys)
-printfn "%A" (ys.[2]) // Better than (Array.get ys 2)
 ```
