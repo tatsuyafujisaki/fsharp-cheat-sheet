@@ -67,6 +67,25 @@ printfn "%A" (xs.Tail) // Simpler than (List.tail xs)
 printfn "%A" (xs.[2]) // Simpler than (xs.Item 2) or (List.item 2 xs)
 ```
 
+###### Set
+```fsharp
+let xs = set [ 1 .. 5 ]
+let ys = set [ 1 .. 5 ]
+
+// Use properties rather than functions
+printfn "%A" (xs.IsEmpty) // Simpler than (Set.isEmpty xs)
+printfn "%A" (xs.Count) // Simpler than (Set.count xs)
+printfn "%A" (xs.MaximumElement) // Simpler than (Set.maxElement xs)
+printfn "%A" (xs.MinimumElement) // Simpler than (Set.minElement xs)
+printfn "%A" (xs.Contains 2) // Simpler than (Set.contains 2 xs)
+printfn "%A" (xs.Add 6) // Simpler than (Set.add 6 xs)
+printfn "%A" (xs.Remove 2) // Simpler than (Set.remove 2 xs)
+printfn "%A" (xs.IsProperSubsetOf ys) // Simpler than (Set.isProperSubset xs ys)
+printfn "%A" (xs.IsSubsetOf ys) // Simpler than (Set.isSubset xs ys)
+printfn "%A" (xs.IsProperSupersetOf ys) // Simpler than (Set.isProperSuperset xs ys)
+printfn "%A" (xs.IsSupersetOf ys) // Simpler than (Set.isSuperset xs ys)
+```
+
 ###### How to initialize a map
 ```fsharp
 let m = Map.ofList [ 1, "one"; 2, "two" ]
