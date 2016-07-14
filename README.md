@@ -5,6 +5,7 @@
 - [F# Component Design Guidelines](http://fsharp.org/specs/component-design-guidelines)
 
 ###### MSDN for F# #
+- [Access Control](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/access-control-%5Bfsharp%5D)
 - [Casting and Conversions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/casting-and-conversions-%5bfsharp%5d)
 - [Code Formatting Guidelines](https://msdn.microsoft.com/visualfsharpdocs/conceptual/code-formatting-guidelines-%5bfsharp%5d)
 - [Compiler Options](https://msdn.microsoft.com/visualfsharpdocs/conceptual/compiler-options-%5bfsharp%5d)
