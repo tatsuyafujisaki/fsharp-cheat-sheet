@@ -110,12 +110,3 @@ match person with
 | { First = "John" } -> printfn "Hi John !" 
 | _  -> printfn "Not John .."
 ```
-###### Convert IEnumerable to IEnumerable\<T>
-```fsharp
-Seq.cast<'T> ie
-```
-
-###### How to iterate through DataRowCollection
-```fsharp
-dt.Rows |> Seq.cast<DataRow> |> Seq.iter (fun dr -> /* Do something */)
-```
