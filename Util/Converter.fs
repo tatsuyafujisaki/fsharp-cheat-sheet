@@ -15,17 +15,20 @@ let trimXml (xml : string) =
     xd.LoadXml(xml.Replace("&", "&amp;"))
     xd.OuterXml
 
-let toListOfArray (dt: DataTable) =
+let toListOfArray (dt : DataTable) =
     dt.AsEnumerable()
     |> Seq.map (fun dr -> dr.ItemArray)
     |> List.ofSeq
 
-let toListOfRecord (dt: DataTable) =
+let toListOfRecord (dt : DataTable) =
     dt.AsEnumerable()
     |> Seq.map (fun dr ->
         let xs = dr.ItemArray |> Array.map string
         { Field1 = xs.[0]; Field2 = xs.[1]; Field3 = xs.[2]; })
     |> List.ofSeq
+
+let toDataRows (dt : DataTable) =
+    dt.Rows |> Seq.cast<DataRow>
 
 // https://msdn.microsoft.com/en-us/library/ms912047.aspx
 let hankaku s = Strings.StrConv(s, VbStrConv.Narrow, 1041)
