@@ -1,8 +1,9 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/s4jjgea8khrku115?svg=true)](https://ci.appveyor.com/project/tatsuya/fsharp-utility-library)
 
 ###### fsharp.org
-- [F# Language Specification](http://fsharp.org/specs/language-spec)
+- [F# Language Specification](https://fsharp.org/specs/language-spec)
 - [F# Component Design Guidelines](http://fsharp.org/specs/component-design-guidelines)
+- [Learning F#](http://fsharp.org/learn.html)
 
 ###### MSDN (except collections)
 - [Access Control](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/access-control-%5Bfsharp%5D)
@@ -27,6 +28,12 @@
 - [Collections.Seq Module](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.seq-module-%5bfsharp%5d)
 - [Collections.Set Module](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.set-module-%5bfsharp%5d)
 - [Collections.Set<'T> Class](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.set%5B't%5D-class-%5Bfsharp%5D)
+
+###### Exceptions
+- [failwith](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/exceptions-the-failwith-function-%5Bfsharp%5D)
+- [invalidArg](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/exceptions-the-invalidarg-function-%5Bfsharp%5D)
+- [invalidOp](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.invalidop%5b%27t%5d-function-%5bfsharp%5d)
+- [nullArg](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.nullarg%5b%27t%5d-function-%5bfsharp%5d)
 
 ###### Tutorials in Visual Studio Gallery
 - [F# Introduction Tutorial - Visual Studio 2010](https://code.msdn.microsoft.com/windowsdesktop/F-Introduction-Tutorial-1707e309)
