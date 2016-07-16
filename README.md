@@ -53,7 +53,7 @@
   - "pdbonly" in the debug configuration
   - "none" in the release configuration
 
-###### Array
+###### Array manipulation
 ```fsharp
 let xs = [| 1 .. 5 |]
 
@@ -62,7 +62,7 @@ printfn "%A" (xs.Length) // Simpler than (Array.length xs)
 printfn "%A" (xs.[2]) // Simpler than (Array.get xs 2)
 ```
 
-###### List
+###### List manipulation
 ```fsharp
 let xs = [ 1 .. 5 ]
 
@@ -74,7 +74,7 @@ printfn "%A" (xs.Tail) // Simpler than (List.tail xs)
 printfn "%A" (xs.[2]) // Simpler than (xs.Item 2) or (List.item 2 xs)
 ```
 
-###### Set
+###### Set manipulation
 ```fsharp
 let xs = set [ 1 .. 5 ]
 let ys = set [ 1 .. 5 ]
@@ -91,6 +91,20 @@ printfn "%A" (xs.IsProperSubsetOf ys) // Simpler than (Set.isProperSubset xs ys)
 printfn "%A" (xs.IsSubsetOf ys) // Simpler than (Set.isSubset xs ys)
 printfn "%A" (xs.IsProperSupersetOf ys) // Simpler than (Set.isProperSuperset xs ys)
 printfn "%A" (xs.IsSupersetOf ys) // Simpler than (Set.isSuperset xs ys)
+```
+
+###### Map manipulation
+```fsharp
+let m = Map.ofArray [| "bacon", 100; "lettuce", 200 |]
+
+// Use properties rather than functions
+printfn "%A" (m.IsEmpty) // Simpler than (Map.isEmpty m)
+printfn "%A" (m.ContainsKey "lettuce") // Simpler than (Map.containsKey "lettuce" m)
+printfn "%A" (m.Count) // "Map.count" does not exist.
+printfn "%A" m.["lettuce"] // Simpler than (m.Item "lettuce") or (Map.find "lettuce" m)
+printfn "%A" (m.TryFind "bacon") // Simpler than (Map.tryFind "bacon" m)
+printfn "%A" (m.Add ("tomato", 300)) // Simpler than (Map.add "tomato" 300 m)
+printfn "%A" (m.Remove "lettuce") // Simpler than (Map.remove "lettuce" m)
 ```
 
 ###### How to initialize a map
