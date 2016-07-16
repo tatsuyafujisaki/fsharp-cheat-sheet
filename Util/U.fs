@@ -11,6 +11,9 @@ open System.Transactions
 // Explanatory wrapper
 let unSome (x: 'T option) = x.Value
 
+// Explanatory wrapper
+let excludeNone xs = List.choose id xs
+
 let readAllBytes (stream : Stream) =
     use ms = new MemoryStream()
     stream.CopyTo(ms)
