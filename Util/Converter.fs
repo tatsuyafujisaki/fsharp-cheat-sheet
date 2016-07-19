@@ -10,6 +10,31 @@ type Record1 = { Field1 : string; Field2 : string; Field3 : string }
 let toRadian degree = (Math.PI / 180.0) * degree
 let toDegree radian = (180.0 / Math.PI) * radian
 
+// Explanatory wrapper
+let flattenArrays xss =
+    Array.concat xss
+
+// Explanatory wrapper
+let flattenLists xss =
+    List.concat xss
+
+// Explanatory wrapper
+let flattenSequences xss =
+    Seq.concat xss
+
+// seq { key1, seq { v1-1, v1-2 }; key2, seq { v2-1, v2-2 }}
+let groupTuples xs =
+    xs
+    |> Seq.groupBy fst
+    |> Seq.map (fun (k, v) -> k, Seq.map snd v)
+
+// [ key1, [ v1-1, v1-2 ]; key2, [ v2-1, v2-2 ]]
+let groupTuplesAsList xs =
+    xs
+    |> Seq.groupBy fst
+    |> Seq.map (fun (k, v) -> k, Seq.map snd v |> List.ofSeq)
+    |> List.ofSeq
+
 let trimXml (xml : string) =
     let xd = XmlDocument()
     xd.LoadXml(xml.Replace("&", "&amp;"))
