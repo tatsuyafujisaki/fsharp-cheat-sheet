@@ -14,6 +14,9 @@ let unSome (x : 'T option) = x.Value
 // Explanatory wrapper
 let excludeNone xs = List.choose id xs
 
+// Explanatory wrapper
+let concat (ss : seq<string>) = String.Concat ss // Simpler than (List.reduce (+) ss)
+
 let readAllBytes (stream : Stream) = 
     use ms = new MemoryStream()
     stream.CopyTo(ms)
