@@ -45,13 +45,16 @@
 - [Introductory Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=MicroSamples)
 - [F# 3.0 Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=FSharp3Samples)
 
-###### Best practices
+###### Best practices in settings
 - Project Properties > Build
   - Other flags > "--warnon:1182"
   - Treat warnings as errors > All
 - Open fsproj, and set the value of <DebugType> to
   - "pdbonly" in the debug configuration
   - "none" in the release configuration
+
+###### Best practices in coding
+- Use int[] rather than int array.
 
 ###### Array manipulation
 ```fsharp
