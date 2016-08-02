@@ -10,12 +10,16 @@ open System.Transactions
 
 // Explanatory wrapper
 let unSome (x : 'T option) = x.Value
-
 // Explanatory wrapper
 let excludeNone xs = List.choose id xs
-
 // Explanatory wrapper
-let concat (ss : seq<string>) = String.Concat ss // Simpler than (List.reduce (+) ss)
+let concat (ss : string seq) = String.Concat ss // Simpler than (List.reduce (+) ss)
+
+let rec last = 
+    function 
+    | [ head ] -> head
+    | _ :: [ tail ] -> last [ tail ]
+    | _ -> invalidOp "The input list was empty."
 
 let readAllBytes (stream : Stream) = 
     use ms = new MemoryStream()

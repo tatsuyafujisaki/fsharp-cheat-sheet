@@ -20,5 +20,5 @@ let areSameLists f (xs : 'a list) (ys : 'a list) =
     xs.Length = ys.Length &&
     List.forall2 f xs ys
 
-let excludeNone (xs : 'a option array) =
+let excludeNone (xs : 'a option[]) =
     Array.filter (fun (x : 'a option) -> x.IsSome) xs
