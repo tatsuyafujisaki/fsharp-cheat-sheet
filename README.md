@@ -36,8 +36,7 @@
 - [nullArg](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.nullarg%5b%27t%5d-function-%5bfsharp%5d)
 
 ###### Tutorials in Visual Studio Gallery
-- [F# Introduction Tutorial - Visual Studio 2010](https://code.msdn.microsoft.com/windowsdesktop/F-Introduction-Tutorial-1707e309)
-- [F# Samples 101 - Visual Studio 2010](https://code.msdn.microsoft.com/windowsdesktop/F-Samples-101-0576cb9f)
+- [Visual F# Samples and Walkthroughs](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/visual-fsharp-samples-and-walkthroughs)
 - [F# 3.0 Sample Pack](https://code.msdn.microsoft.com/windowsdesktop/F-30-Sample-Pack-d06ea11f)
 
 ###### Tutorials NOT in Visual Studio Gallery
