@@ -30,6 +30,8 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
     <OtherFlags>--warnon:1182</OtherFlags>
+    <StartArguments>
+    </StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -63,6 +65,8 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="App.config" />
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Algorithm.fs" />
     <Compile Include="Bool.fs" />
@@ -73,7 +77,6 @@
     <Compile Include="Network.fs" />
     <Compile Include="Test.fs" />
     <Compile Include="Program.fs" />
-    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="log4net">

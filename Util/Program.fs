@@ -10,9 +10,12 @@ let main argv =
     AppDomain.CurrentDomain.UnhandledException.AddHandler (fun _ e -> logger.Error e.ExceptionObject)
 
     match argv with
-    | [| _ |] -> 
-        stdin.Read() |> ignore
-        logger.Error "Something went wrong."
+    | [| _ |] ->
+        logger.Error "Sample error."
+
+        // Wait without closing console 
+        // stdin.Read() |> ignore
+
         0
     | _ -> 
         invalidOp "Must have only one argument."
