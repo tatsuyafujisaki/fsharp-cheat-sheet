@@ -1,8 +1,14 @@
 ﻿module Io
 
+open FSharp.Data
 open Process1
 open System
 open System.IO
+
+// Use [<Literal>] because CsvProvider<...> needs to be resolved at compile time.
+[<Literal>]
+let Url = "http://ichart.finance.yahoo.com/table.csv?s=DIS"
+let getRows () = CsvProvider<Url>.Load(Url).Rows
 
 let rec readName() = 
     printf "Enter name: "
