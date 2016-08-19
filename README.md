@@ -45,6 +45,7 @@
 - [F# 3.0 Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=FSharp3Samples)
 
 ###### Best practices in settings
+- F# Power Tools > Configuration > Project Cache Size > 0
 - Project Properties > Build
   - Other flags > "--warnon:1182"
   - Treat warnings as errors > All
