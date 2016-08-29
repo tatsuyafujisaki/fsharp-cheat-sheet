@@ -1,7 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/s4jjgea8khrku115?svg=true)](https://ci.appveyor.com/project/tatsuya/fsharp-utility-library)
 
 ###### fsharp.org
-- [F# Language Specification](https://fsharp.org/specs/language-spec)
+- [F# Language Specification](http://fsharp.org/specs/language-spec)
 - [F# Component Design Guidelines](http://fsharp.org/specs/component-design-guidelines)
 - [Learning F#](http://fsharp.org/learn.html)
 
