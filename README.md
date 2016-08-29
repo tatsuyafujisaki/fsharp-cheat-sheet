@@ -5,18 +5,20 @@
 - [F# Component Design Guidelines](http://fsharp.org/specs/component-design-guidelines)
 - [Learning F#](http://fsharp.org/learn.html)
 
+###### Docs
+- [Access Control](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/access-control)
+- [Code Formatting Guidelines](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/code-formatting-guidelines)
+- [Compiler Options](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/compiler-options)
+- [Computation Expressions](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/computation-expressions)
+- [Constraints](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/generics/constraints)
+- [Statically Resolved Type Parameters](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/generics/statically-resolved-type-parameters)
+- [Symbol and Operator Reference](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/symbol-and-operator-reference/index)
+
 ###### MSDN (except collections)
-- [Access Control](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/access-control-%5Bfsharp%5D)
 - [Casting and Conversions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/casting-and-conversions-%5bfsharp%5d)
-- [Code Formatting Guidelines](https://msdn.microsoft.com/visualfsharpdocs/conceptual/code-formatting-guidelines-%5bfsharp%5d)
-- [Compiler Options](https://msdn.microsoft.com/visualfsharpdocs/conceptual/compiler-options-%5bfsharp%5d)
-- [Computation Expressions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/computation-expressions-%5bfsharp%5d)
-- [Constraints](https://msdn.microsoft.com/visualfsharpdocs/conceptual/constraints-%5bfsharp%5d)
 - [Core.Operators Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.operators-module-%5bfsharp%5d)
 - [Core.Printf Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.printf-module-%5bfsharp%5d)
 - [Debugging F#](https://msdn.microsoft.com/en-us/library/ee843932.aspx)
-- [Statically Resolved Type Parameters](https://msdn.microsoft.com/visualfsharpdocs/conceptual/statically-resolved-type-parameters-%5bfsharp%5d)
-- [Symbol and Operator Reference](https://msdn.microsoft.com/visualfsharpdocs/conceptual/symbol-and-operator-reference-%5bfsharp%5d)
 - [Tail calls in F#](https://blogs.msdn.microsoft.com/fsharpteam/2011/07/08/tail-calls-in-f/)
 
 ###### Collections
