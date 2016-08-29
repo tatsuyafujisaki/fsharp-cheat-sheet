@@ -30,8 +30,8 @@
 - [Collections.Set<'T> Class](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.set%5B't%5D-class-%5Bfsharp%5D)
 
 ###### Exceptions
-- [failwith](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/exceptions-the-failwith-function-%5Bfsharp%5D)
-- [invalidArg](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/exceptions-the-invalidarg-function-%5Bfsharp%5D)
+- [failwith](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/exception-handling/the-failwith-function)
+- [invalidArg](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/exception-handling/the-invalidArg-function)
 - [invalidOp](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.invalidop%5b%27t%5d-function-%5bfsharp%5d)
 - [nullArg](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.nullarg%5b%27t%5d-function-%5bfsharp%5d)
 
