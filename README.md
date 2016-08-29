@@ -14,7 +14,7 @@
 - [Statically Resolved Type Parameters](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/generics/statically-resolved-type-parameters)
 - [Symbol and Operator Reference](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/symbol-and-operator-reference/index)
 
-###### MSDN (except collections)
+###### MSDN
 - [Casting and Conversions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/casting-and-conversions-%5bfsharp%5d)
 - [Core.Operators Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.operators-module-%5bfsharp%5d)
 - [Core.Printf Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.printf-module-%5bfsharp%5d)
