@@ -10,6 +10,11 @@ let isEmpty xs = Array.isEmpty xs
 
 let isNumeric x = Double.TryParse x |> fst
 
+let isNonZero x =
+    match Double.TryParse x with
+    | true, x when x <> 0.0 -> true
+    | _ -> false
+
 let caseInsensitiveContains (s : string) findMe =
     -1 < s.IndexOf(findMe, StringComparison.OrdinalIgnoreCase)
 
