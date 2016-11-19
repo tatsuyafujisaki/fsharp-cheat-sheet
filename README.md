@@ -58,6 +58,15 @@
 ###### Best practices in coding
 - Use int[] rather than int array.
 
+###### Pokemon exception handling
+```fsharp
+try
+    // Do something
+with
+| _ -> Do something
+
+```
+
 ###### Array manipulation
 ```fsharp
 let xs = [| 1 .. 5 |]
