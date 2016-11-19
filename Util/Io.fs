@@ -10,6 +10,9 @@ open System.IO
 let Url = "http://ichart.finance.yahoo.com/table.csv?s=DIS"
 let getRows () = CsvProvider<Url>.Load(Url).Rows
 
+let printMap path map =
+    File.WriteAllLines (path, map |> Map.toSeq |> Seq.map (fun (k, v) -> sprintf "%A = %A" k v))
+
 let rec readName() = 
     printf "Enter name: "
     match Console.ReadLine().Trim() with

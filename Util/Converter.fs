@@ -2,6 +2,7 @@
 
 open Microsoft.VisualBasic
 open System
+open System.Collections.Generic
 open System.Data
 open System.Xml
 
@@ -9,6 +10,11 @@ type Record1 =
     { Field1 : string
       Field2 : string
       Field3 : string }
+
+let toDictionary map = map |> Map.toSeq |> dict
+
+let getKeys map = map |> Map.toSeq |> Seq.map fst
+let getValues map = map |> Map.toSeq |> Seq.map snd
 
 let toRadian degree = (Math.PI / 180.0) * degree
 let toDegree radian = (180.0 / Math.PI) * radian
