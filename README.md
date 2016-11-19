@@ -57,6 +57,7 @@
 
 ###### Best practices in coding
 - Use int[] rather than int array.
+- Use the Locals window rather the Watch window. (The Auto window does not support F#.)
 
 ###### Pokemon exception handling
 ```fsharp
