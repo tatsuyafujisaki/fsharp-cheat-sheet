@@ -63,8 +63,7 @@
 try
     // Do something
 with
-| _ -> Do something
-
+| _ -> // Do something
 ```
 
 ###### Array manipulation
