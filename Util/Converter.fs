@@ -11,7 +11,10 @@ type Record1 =
       Field2 : string
       Field3 : string }
 
-let toDictionary map = map |> Map.toSeq |> dict
+// Explanatory wrapper
+let toIEnumerable xs = List.toSeq xs
+
+let toIDictionary map = map |> Map.toSeq |> dict
 
 let getKeys map = map |> Map.toSeq |> Seq.map fst
 let getValues map = map |> Map.toSeq |> Seq.map snd
