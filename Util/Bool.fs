@@ -2,6 +2,8 @@
 
 open System
 
+let eq s1 s2 = String.Equals(s1, s2, StringComparison.InvariantCultureIgnoreCase)
+
 // Explanatory wrapper
 let isSome (x: 'T option) = x.IsSome
 

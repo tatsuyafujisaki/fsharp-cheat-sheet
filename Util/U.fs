@@ -10,8 +10,10 @@ open System.Transactions
 
 // Explanatory wrapper
 let unSome (x : 'T option) = x.Value
+
 // Explanatory wrapper
 let excludeNone xs = List.choose id xs
+
 // Explanatory wrapper
 let concat (ss : string seq) = String.Concat ss // Simpler than (List.reduce (+) ss)
 
@@ -26,30 +28,7 @@ let readAllBytes (stream : Stream) =
     stream.CopyTo(ms)
     ms.ToArray()
 
-let ftpDownloadBinary (url : string) (user : string) (password : string) outputPath = 
-    let fwr = WebRequest.Create(url) :?> FtpWebRequest
-    fwr.Credentials <- NetworkCredential(user, password)
-    use wr = fwr.GetResponse()
-    use s = wr.GetResponseStream()
-    File.WriteAllBytes(outputPath, readAllBytes (s))
-
-let startProcess fileName (arguments : string option) = 
-    let psi = 
-        match arguments with
-        | Some args -> ProcessStartInfo(fileName, args)
-        | None -> ProcessStartInfo(fileName)
-    psi.CreateNoWindow <- true
-    psi.UseShellExecute <- false
-    psi.WindowStyle <- ProcessWindowStyle.Hidden
-    psi.RedirectStandardInput <- true
-    psi.RedirectStandardOutput <- true
-    psi.RedirectStandardError <- true
-    let p = Process.Start(psi)
-    p.WaitForExit()
-    if p.ExitCode <> 0 then failwithf "%A" (p.StandardError.ReadToEnd())
-    p.StandardOutput.ReadToEnd()
-
-let uncompressZ path = startProcess "7z.exe" (Some(sprintf @"e -y -o ""%s"" ""%s.Z""" (Path.GetTempPath()) path))
+let uncompressZ path = Process1.startProcess2 "7z.exe" (Some(sprintf @"e -y -o ""%s"" ""%s.Z""" (Path.GetTempPath()) path))
 
 let toDataTable (dsv : string) delimiter hasHeading = 
     let lines = dsv.Split([| '\n' |])
