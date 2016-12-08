@@ -17,11 +17,8 @@ let excludeNone xs = List.choose id xs
 // Explanatory wrapper
 let concat (ss : string seq) = String.Concat ss // Simpler than (List.reduce (+) ss)
 
-let rec last = 
-    function 
-    | [ head ] -> head
-    | _ :: [ tail ] -> last [ tail ]
-    | _ -> invalidOp "The input list was empty."
+// Explanatory wrapper
+let last xs = Seq.last xs
 
 let readAllBytes (stream : Stream) = 
     use ms = new MemoryStream()
