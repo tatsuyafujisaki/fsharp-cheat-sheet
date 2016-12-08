@@ -74,6 +74,7 @@
     <Compile Include="String1.fs" />
     <Compile Include="Converter.fs" />
     <Compile Include="Process1.fs" />
+    <Compile Include="Collection1.fs" />
     <Compile Include="U.fs" />
     <Compile Include="Io.fs" />
     <Compile Include="Network.fs" />

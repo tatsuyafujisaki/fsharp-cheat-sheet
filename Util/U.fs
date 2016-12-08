@@ -12,13 +12,7 @@ open System.Transactions
 let unSome (x : 'T option) = x.Value
 
 // Explanatory wrapper
-let excludeNone xs = List.choose id xs
-
-// Explanatory wrapper
 let concat (ss : string seq) = String.Concat ss // Simpler than (List.reduce (+) ss)
-
-// Explanatory wrapper
-let last xs = Seq.last xs
 
 let readAllBytes (stream : Stream) = 
     use ms = new MemoryStream()
