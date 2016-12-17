@@ -68,7 +68,6 @@
     <Content Include="packages.config" />
     <Content Include="App.config" />
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Assert.fs" />
     <Compile Include="Algorithm.fs" />
     <Compile Include="Bool.fs" />
     <Compile Include="String1.fs" />

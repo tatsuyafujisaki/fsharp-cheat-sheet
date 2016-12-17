@@ -23,6 +23,11 @@ let caseInsensitiveContains (s : string) findMe =
 let isCommentLine (s : string) =
     s.TrimStart().[0] = '#'
 
+let areAllSame xs =
+    match Seq.distinct xs |> Seq.length with
+    | 1 -> true
+    | _ -> false
+
 let areSameLists f (xs : 'a list) (ys : 'a list) =
     xs.Length = ys.Length &&
     List.forall2 f xs ys

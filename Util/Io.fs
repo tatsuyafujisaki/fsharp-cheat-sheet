@@ -43,15 +43,15 @@ let rec readFilePath() =
     if File.Exists(filePath) then filePath
     else readFilePath()
 
-let rec print xs = 
-    match xs with
+let rec print = 
+    function
     | [] -> ()
     | x :: tail -> 
         printfn "%A" x
         print tail
 
-let rec reversePrint xs = 
-    match xs with
+let rec reversePrint = 
+    function
     | [] -> ()
     | x :: tail -> 
         reversePrint tail
