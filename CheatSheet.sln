@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Util", "Util\Util.fsproj", "{4AC426A1-D67A-45C9-B9B3-7522962286B4}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "CheatSheet", "CheatSheet\CheatSheet.fsproj", "{4AC426A1-D67A-45C9-B9B3-7522962286B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

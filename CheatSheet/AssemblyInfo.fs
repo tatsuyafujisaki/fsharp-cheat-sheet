@@ -3,12 +3,12 @@
 open System.Reflection
 open System.Runtime.InteropServices
 
-[<assembly: AssemblyTitle("Util")>]
+[<assembly: AssemblyTitle("CheatSheet")>]
 [<assembly: AssemblyDescription("")>]
 [<assembly: AssemblyConfiguration("")>]
 [<assembly: AssemblyCompany("")>]
-[<assembly: AssemblyProduct("Util")>]
-[<assembly: AssemblyCopyright("Copyright © 2016")>]
+[<assembly: AssemblyProduct("CheatSheet")>]
+[<assembly: AssemblyCopyright("Copyright © 2020")>]
 [<assembly: AssemblyTrademark("")>]
 [<assembly: AssemblyCulture("")>]
 [<assembly: ComVisible(false)>]
