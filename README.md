@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/s4jjgea8khrku115?svg=true)](https://ci.appveyor.com/project/tatsuya/fsharp-utility-library)
+[![Build status](https://ci.appveyor.com/api/projects/status/awbxjohei2cpxnsp?svg=true)](https://ci.appveyor.com/project/tatsuya/fsharp-cheat-sheet)
 
 ###### fsharp.org
 - [F# Language Specification](http://fsharp.org/specs/language-spec)
