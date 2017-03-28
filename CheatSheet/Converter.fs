@@ -1,6 +1,5 @@
 ﻿module Converter
 
-open Microsoft.VisualBasic
 open System
 open System.Collections.Generic
 open System.Data
@@ -64,6 +63,3 @@ let toListOfRecord (dt : DataTable) =
     |> List.ofSeq
 
 let toDataRows (dt : DataTable) = dt.Rows |> Seq.cast<DataRow>
-
-// https://msdn.microsoft.com/en-us/library/ms912047.aspx
-let hankaku s = Strings.StrConv(s, VbStrConv.Narrow, 1041)
