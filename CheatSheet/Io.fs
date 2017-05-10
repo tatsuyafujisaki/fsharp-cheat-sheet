@@ -10,6 +10,9 @@ open System.IO
 let Url = "http://ichart.finance.yahoo.com/table.csv?s=DIS"
 let getRows () = CsvProvider<Url>.Load(Url).Rows
 
+// F# cannot define a variadic function. (A variadic function is a function of indefinite arity.
+let desktopize path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop, path))
+
 let printMap path map =
     File.WriteAllLines (path, map |> Map.toSeq |> Seq.map (fun (k, v) -> sprintf "%A = %A" k v))
 
