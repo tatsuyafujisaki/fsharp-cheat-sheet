@@ -4,14 +4,15 @@ open System
 open System.Collections.Generic
 open System.Data
 open System.Xml
+open System.Web.Script.Serialization
 
-type Record1 = 
+type Record1 =
     { Field1 : string
       Field2 : string
       Field3 : string }
 
 // Explanatory wrapper
-let toIEnumerable xs = List.toSeq xs
+let toIEnumerable = List.toSeq
 
 let toIDictionary map = map |> Map.toSeq |> dict
 
@@ -22,13 +23,13 @@ let toRadian degree = (Math.PI / 180.0) * degree
 let toDegree radian = (180.0 / Math.PI) * radian
 
 // Explanatory wrapper
-let flattenArrays xss = Array.concat xss
+let flattenArrays = Array.concat
 
 // Explanatory wrapper
-let flattenLists xss = List.concat xss
+let flattenLists = List.concat
 
 // Explanatory wrapper
-let flattenSequences xss = Seq.concat xss
+let flattenSequences = Seq.concat
 
 // seq { key1, seq { v1-1, v1-2 }; key2, seq { v2-1, v2-2 }}
 let groupTuples xs = 
@@ -63,3 +64,14 @@ let toListOfRecord (dt : DataTable) =
     |> List.ofSeq
 
 let toDataRows (dt : DataTable) = dt.Rows |> Seq.cast<DataRow>
+
+// Dictionary to map
+let dictionaryToMap kvps =
+    kvps
+    |> Seq.map (|KeyValue|)
+    |> Map.ofSeq
+
+// JSON to map
+let jsonToMap json =
+    let jss = JavaScriptSerializer()
+    dictionaryToMap (jss.Deserialize<Dictionary<string, obj>>(json))

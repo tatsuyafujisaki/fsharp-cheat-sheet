@@ -5,7 +5,6 @@ open System.Data
 open System.Data.SqlClient
 open System.Diagnostics
 open System.IO
-open System.Net
 open System.Transactions
 
 // Explanatory wrapper

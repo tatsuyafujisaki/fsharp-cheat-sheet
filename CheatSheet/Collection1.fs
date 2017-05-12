@@ -9,7 +9,7 @@ let excludeNone3 xs = List.choose id xs
 // Explanatory wrapper
 // There is no such function as "Array.last", "List.last" or "Set.last".
 // "Seq.last" takes not only a sequence but also an array, a list or a set.
-let last xs = Seq.last xs
+let last = Seq.last
 
 let excludeFirst =
     function
