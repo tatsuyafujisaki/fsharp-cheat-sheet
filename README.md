@@ -51,9 +51,6 @@
 - Project Properties > Build
   - Other flags > "--warnon:1182"
   - Treat warnings as errors > All
-- Open fsproj, and set the value of <DebugType> to
-  - "pdbonly" in the debug configuration
-  - "none" in the release configuration
 
 ###### Best practices in coding
 - Use int[] rather than int array.
