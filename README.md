@@ -58,6 +58,16 @@
 ###### Best practices in coding
 - Use int[] rather than int array.
 - Use the Locals window rather the Watch window. (The Auto window does not support F#.)
+- Use A.toB rather than B.ofA as follows.
+
+|Better|Worse|
+|---|---|
+|Array.toSeq|Seq.ofArray|
+|Array.toList|List.ofArray|
+|Seq.toArray|Array.ofSeq|
+|Seq.toList|List.ofSeq|
+|List.toArray|Array.ofList|
+|List.toSeq|Seq.ofList|
 
 ###### Pokemon exception handling
 ```fsharp
