@@ -41,8 +41,8 @@ let groupTuples xs =
 let groupTuplesAsList xs = 
     xs
     |> Seq.groupBy fst
-    |> Seq.map (fun (k, v) -> k, Seq.map snd v |> List.ofSeq)
-    |> List.ofSeq
+    |> Seq.map (fun (k, v) -> k, Seq.map snd v |> Seq.toList)
+    |> Seq.toList
 
 let trimXml (xml : string) = 
     let xd = XmlDocument()
@@ -52,7 +52,7 @@ let trimXml (xml : string) =
 let toListOfArray (dt : DataTable) = 
     dt.AsEnumerable()
     |> Seq.map (fun dr -> dr.ItemArray)
-    |> List.ofSeq
+    |> Seq.toList
 
 let toListOfRecord (dt : DataTable) = 
     dt.AsEnumerable()
@@ -61,7 +61,7 @@ let toListOfRecord (dt : DataTable) =
            { Field1 = xs.[0]
              Field2 = xs.[1]
              Field3 = xs.[2] })
-    |> List.ofSeq
+    |> Seq.toList
 
 let toDataRows (dt : DataTable) = dt.Rows |> Seq.cast<DataRow>
 

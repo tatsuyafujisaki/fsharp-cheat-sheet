@@ -2,6 +2,7 @@
 
 open log4net
 open System
+open Collection1
 
 [<EntryPoint>]
 let main argv = 

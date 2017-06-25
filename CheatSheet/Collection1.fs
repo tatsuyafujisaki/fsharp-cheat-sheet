@@ -1,5 +1,7 @@
 ﻿module Collection1
 
+open System.Linq
+
 // Explanatory wrapper
 // There is no such function as "Set.choose".
 let excludeNone1 xs = Array.choose id xs
@@ -34,3 +36,12 @@ let separateLast xs =
         | head :: tail -> separateLast' (head :: acc) tail
 
     separateLast' [] xs
+
+let insertIfCharExistsInEndOfPreviousLine (ss: string List) (c : char) sToInsert =
+    let countGivenCharInEnd (s : string) c = s.Length - s.TrimEnd([|c|]).Length
+
+    ss
+    |> List.map (fun s -> match s.EndsWith(c.ToString()) with
+                          | true -> s.TrimEnd([|c|]) :: (Seq.toList (Enumerable.Repeat(sToInsert, (countGivenCharInEnd s c))))
+                          | false -> [s])
+    |> List.concat

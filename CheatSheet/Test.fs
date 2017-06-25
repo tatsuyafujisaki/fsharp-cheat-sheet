@@ -13,7 +13,3 @@ let mutableVsRef() =
     printfn "b = %A" !b // 9
     printfn "c = %A" c // 1
     printfn "d = %A" d // 9
-
-let getRowsTest () =
-    Io.getRows ()
-    |> Seq.iter (fun row -> printfn "%A, %A, %A, %A" row.High row.Low row.Open row.Close)
