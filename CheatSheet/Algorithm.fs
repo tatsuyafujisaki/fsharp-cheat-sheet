@@ -1,18 +1,19 @@
 ﻿module Algorithm
 
 let sum n = 
-    let rec f n acc = 
-        if n <= 0 then acc
-        else f (n - 1) (acc + n)
-    f n 0
+    let rec sum' acc = function 
+        | 0 -> acc
+        | n -> sum' (acc + n) (n - 1)
+    sum' 0 n
 
-let rec fibonacci n = 
-    if n < 2 then 1
-    else fibonacci (n - 1) + fibonacci (n - 2)
+let rec fibonacci = function
+    | 0 -> 0
+    | 1 -> 1
+    | n -> fibonacci (n - 1) + fibonacci (n - 2)
 
-let rec factorial n = 
-    if n = 0 then 1
-    else n * factorial (n - 1)
+let rec factorial = function
+    | 0 | 1 -> 1
+    | n -> n * factorial (n - 1)
 
 let rec gcd a b = 
     if b = 0 then a

@@ -2,19 +2,22 @@
 
 open log4net
 open System
-open Collection1
 
 [<EntryPoint>]
-let main argv = 
+let main _ = 
     let log = LogManager.GetLogger("Program")
     
     AppDomain.CurrentDomain.UnhandledException.AddHandler (fun _ e -> log.Error e.ExceptionObject)
 
-    match argv with
-    | [| _ |] ->
-        // Wait without closing console 
-        // stdin.Read() |> ignore
-        0
-    | _ -> 
-        invalidOp "Must have only one argument."
-        1
+    printfn "%s" "Hello world!"
+
+    0
+
+    //match argv with
+    //| [| _ |] ->
+    //    // Wait without closing console 
+    //    // stdin.Read() |> ignore
+    //    0
+    //| _ -> 
+    //    invalidOp "Must have only one argument."
+    //    1
