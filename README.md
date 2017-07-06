@@ -20,6 +20,7 @@
 - [Core.Printf Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.printf-module-%5bfsharp%5d)
 - [Debugging F#](https://msdn.microsoft.com/library/ee843932.aspx)
 - [Tail calls in F#](https://blogs.msdn.microsoft.com/fsharpteam/2011/07/08/tail-calls-in-f/)
+- [Visual F# Samples and Walkthroughs](https://msdn.microsoft.com/visualfsharpdocs/conceptual/visual-fsharp-samples-and-walkthroughs)
 
 ###### Collections
 - [Collections.Array Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array-module-%5bfsharp%5d)
@@ -37,15 +38,6 @@
 - [invalidOp](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.invalidop%5b%27t%5d-function-%5bfsharp%5d)
 - [nullArg](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.nullarg%5b%27t%5d-function-%5bfsharp%5d)
 
-###### Tutorials in Visual Studio Gallery
-- [Visual F# Samples and Walkthroughs](https://msdn.microsoft.com/visualfsharpdocs/conceptual/visual-fsharp-samples-and-walkthroughs)
-- [F# 3.0 Sample Pack](https://code.msdn.microsoft.com/windowsdesktop/F-30-Sample-Pack-d06ea11f)
-
-###### Tutorials NOT in Visual Studio Gallery
-- New Project > Templates > Visual F# > Tutorial
-- [Introductory Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=MicroSamples)
-- [F# 3.0 Micro Samples](https://fsharp3sample.codeplex.com/wikipage?Title=FSharp3Samples)
-
 ###### Best practices in settings
 - F# Power Tools > Configuration > Project Cache Size > 0
 - Project Properties > Build
@@ -55,7 +47,8 @@
 ###### Best practices in coding
 - Use int[] rather than int array.
 - Use the Locals window rather the Watch window. (The Auto window does not support F#.)
-- Use A.toB rather than B.ofA as follows.
+- Use A.toB rather than B.ofA as follows
+  - But there is only way to convert from and to set
 
 |Better|Worse|
 |---|---|
@@ -65,6 +58,12 @@
 |Seq.toList|List.ofSeq|
 |List.toArray|Array.ofList|
 |List.toSeq|Seq.ofList|
+|Set.ofArray|(none)|
+|Set.ofSeq|(none)|
+|Set.ofList|(none)|
+|Set.toArray|(none)|
+|Set.toSeq|(none)|
+|Set.toList|(none)|
 
 ###### Pokemon exception handling
 ```fsharp
