@@ -19,3 +19,10 @@ let rec gcd a b =
     if b = 0 then a
     elif b < a then gcd b (a - b)
     else gcd (b - a) a
+
+let fizzBuzz (n : int) =
+    match n % 3, n % 5 with
+    | 0, 0 -> "FizzBuzz"
+    | 0, _ -> "Fizz"
+    | _, 0 -> "Buzz"
+    | _ -> string n
