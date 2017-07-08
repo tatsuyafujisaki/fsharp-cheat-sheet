@@ -4,6 +4,12 @@ open Microsoft.VisualBasic
 open System
 open System.Text.RegularExpressions
 
+let rec concat = function
+    | [] -> ""
+    | [head] -> head
+    | head :: second :: [] -> head + " and " + second
+    | head :: tail -> head + ", " + (concat tail)
+
 let split (s : string) (separator : string) =
     s.Split([| separator |], StringSplitOptions.None)
 

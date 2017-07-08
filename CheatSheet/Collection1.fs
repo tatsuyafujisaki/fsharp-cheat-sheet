@@ -9,9 +9,20 @@ let excludeNone2 xs = Seq.choose id xs
 let excludeNone3 xs = List.choose id xs
 
 // Explanatory wrapper
-// There is no such function as "Array.last", "List.last" or "Set.last".
-// "Seq.last" takes not only a sequence but also an array, a list or a set.
+// There is no such function as "Array.last" or "List.last" but "Seq.last" takes not only a sequence but also an array, a list or a set.
 let last = Seq.last
+
+// In reality, use Seq.last.
+let rec myLast = function
+  | [head] -> head
+  | _ :: tail -> myLast tail
+  | _ -> invalidOp "The list is empty."
+
+let rec secondToLast = function
+  | [] -> invalidOp "The list is empty."
+  | [_] -> invalidOp "The list has only one element." 
+  | head :: _ :: [] -> head
+  | _ :: tail -> secondToLast tail
 
 let excludeFirst =
     function
