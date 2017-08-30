@@ -2,7 +2,7 @@
 
 open System
 
-let eq s1 s2 = String.Equals(s1, s2, StringComparison.InvariantCultureIgnoreCase)
+let eqIgnoreCase (s1 : string) s2 = s1.Equals(s2, StringComparison.OrdinalIgnoreCase)
 
 // Explanatory wrapper
 let isSome (x: 'T option) = x.IsSome

@@ -18,7 +18,13 @@ let getBetween s from to1 inclusive =
     if m.Success then Some (m.Groups.[1].Value) else None
 
 // https://msdn.microsoft.com/en-us/library/ms912047.aspx
-let fullwidth s = Strings.StrConv(s, VbStrConv.Wide, 1041)
+let zenkaku s = Strings.StrConv(s, VbStrConv.Wide, 1041)
 
 // https://msdn.microsoft.com/en-us/library/ms912047.aspx
-let halfwidth s = Strings.StrConv(s, VbStrConv.Narrow, 1041)
+let hankaku s = Strings.StrConv(s, VbStrConv.Narrow, 1041)
+
+let zenkakuWithUnicodeEscaped (s : string) =
+    let unicodeToEscape = '®'
+    s.Split unicodeToEscape
+    |> Array.map (fun x -> Strings.StrConv(x, VbStrConv.Wide, 1041))
+    |> String.concat (unicodeToEscape.ToString())
