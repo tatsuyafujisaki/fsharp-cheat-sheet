@@ -7,7 +7,7 @@ open System.Text.RegularExpressions
 let rec concat = function
     | [] -> ""
     | [head] -> head
-    | head :: second :: [] -> head + " and " + second
+    | head :: [second] -> head + " and " + second
     | head :: tail -> head + ", " + (concat tail)
 
 let split (s : string) (separator : string) =
