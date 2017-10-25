@@ -1,54 +1,55 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/awbxjohei2cpxnsp?svg=true)](https://ci.appveyor.com/project/tatsuya/fsharp-cheat-sheet)
 
 ###### fsharp.org
-- [F# Language Specification](http://fsharp.org/specs/language-spec)
-- [F# Component Design Guidelines](http://fsharp.org/specs/component-design-guidelines)
-- [Learning F#](http://fsharp.org/learn.html)
+* [F# Language Specification](http://fsharp.org/specs/language-spec)
+* [F# Component Design Guidelines](http://fsharp.org/specs/component-design-guidelines)
+* [Learning F#](http://fsharp.org/learn.html)
 
 ###### Docs
-- [Access Control](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/access-control)
-- [Code Formatting Guidelines](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/code-formatting-guidelines)
-- [Compiler Options](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/compiler-options)
-- [Computation Expressions](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/computation-expressions)
-- [Constraints](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/generics/constraints)
-- [Statically Resolved Type Parameters](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/generics/statically-resolved-type-parameters)
-- [Symbol and Operator Reference](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/symbol-and-operator-reference/index)
+* [Access Control](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/access-control)
+* [Code Formatting Guidelines](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/code-formatting-guidelines)
+* [Compiler Options](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/compiler-options)
+* [Computation Expressions](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/computation-expressions)
+* [Constraints](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/generics/constraints)
+* [Statically Resolved Type Parameters](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/generics/statically-resolved-type-parameters)
+* [Symbol and Operator Reference](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/symbol-and-operator-reference/index)
 
 ###### MSDN
-- [Casting and Conversions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/casting-and-conversions-%5bfsharp%5d)
-- [Core.Operators Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.operators-module-%5bfsharp%5d)
-- [Core.Printf Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.printf-module-%5bfsharp%5d)
-- [Debugging F#](https://msdn.microsoft.com/library/ee843932.aspx)
-- [Tail calls in F#](https://blogs.msdn.microsoft.com/fsharpteam/2011/07/08/tail-calls-in-f/)
-- [Visual F# Samples and Walkthroughs](https://msdn.microsoft.com/visualfsharpdocs/conceptual/visual-fsharp-samples-and-walkthroughs)
+* [Casting and Conversions](https://msdn.microsoft.com/visualfsharpdocs/conceptual/casting-and-conversions-%5bfsharp%5d)
+* [Core.Operators Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.operators-module-%5bfsharp%5d)
+* [Core.Printf Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.printf-module-%5bfsharp%5d)
+* [Debugging F#](https://msdn.microsoft.com/library/ee843932.aspx)
+* [Tail calls in F#](https://blogs.msdn.microsoft.com/fsharpteam/2011/07/08/tail-calls-in-f/)
+* [Visual F# Samples and Walkthroughs](https://msdn.microsoft.com/visualfsharpdocs/conceptual/visual-fsharp-samples-and-walkthroughs)
 
 ###### Collections
-- [Collections.Array Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array-module-%5bfsharp%5d)
-- [Collections.List Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d)
-- [Collections.List<'T> Union](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list%5b't%5d-union-%5bfsharp%5d)
-- [Collections.Map Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.map-module-%5bfsharp%5d)
-- [Collections.Map<'Key,'Value> Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.map%5b'key,'value%5d-class-%5bfsharp%5d)
-- [Collections.Seq Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.seq-module-%5bfsharp%5d)
-- [Collections.Set Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.set-module-%5bfsharp%5d)
-- [Collections.Set<'T> Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.set%5B't%5D-class-%5Bfsharp%5D)
+* [Collections.Array Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.array-module-%5bfsharp%5d)
+* [Collections.List Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d)
+* [Collections.List<'T> Union](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list%5b't%5d-union-%5bfsharp%5d)
+* [Collections.Map Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.map-module-%5bfsharp%5d)
+* [Collections.Map<'Key,'Value> Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.map%5b'key,'value%5d-class-%5bfsharp%5d)
+* [Collections.Seq Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.seq-module-%5bfsharp%5d)
+* [Collections.Set Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.set-module-%5bfsharp%5d)
+* [Collections.Set<'T> Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.set%5B't%5D-class-%5Bfsharp%5D)
 
 ###### Exceptions
-- [failwith](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/exception-handling/the-failwith-function)
-- [invalidArg](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/exception-handling/the-invalidArg-function)
-- [invalidOp](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.invalidop%5b%27t%5d-function-%5bfsharp%5d)
-- [nullArg](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.nullarg%5b%27t%5d-function-%5bfsharp%5d)
+* [failwith](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/exception-handling/the-failwith-function)
+* [invalidArg](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/exception-handling/the-invalidArg-function)
+* [invalidOp](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.invalidop%5b%27t%5d-function-%5bfsharp%5d)
+* [nullArg](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.nullarg%5b%27t%5d-function-%5bfsharp%5d)
 
 ###### Best practices in settings
-- F# Power Tools > Configuration > Project Cache Size > 0
-- Project Properties > Build
-  - Other flags > "--warnon:1182"
-  - Treat warnings as errors > All
+* F# Power Tools > Configuration > Project Cache Size > 0
+* Project Properties > Build
+  * Other flags > "--warnon:1182"
+  * Treat warnings as errors > All
 
 ###### Best practices in coding
-- Use int[] rather than int array.
-- Use the Locals window rather the Watch window. (The Auto window does not support F#.)
-- Use A.toB rather than B.ofA as follows
-  - But there is only way to convert from and to set
+* Use int[] rather than int array.
+* Use A.toB rather than B.ofA as follows
+  * But there is only way to convert from and to set
+* Use "List.collect f xs" rather than "List.concat (List.map f xs)"
+* Use "List.map (g >> f) xs" rather than "List.map f (List.map g xs)"
 
 |Better|Worse|
 |---|---|
