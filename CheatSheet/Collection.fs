@@ -1,4 +1,4 @@
-﻿module Collection1
+﻿module Collection
 
 open System.Linq
 
