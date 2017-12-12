@@ -13,7 +13,7 @@
   * Use `List.collect f xs` rather than `List.concat (List.map f xs)`
   * Use `List.map (g >> f) xs` rather than `List.map f (List.map g xs)`
 
-Recommended|Alternative
+Recommended|Not recommended
 ---|---
 Array.toSeq|Seq.ofArray
 Array.toList|List.ofArray
