@@ -2,7 +2,7 @@
 
 # Best practices in settings
 * `F# Power Tools` > `Configuration` > `Project Cache Size` > 0
-* Project Properties > `Build`
+* Project > `Properties` > `Build`
   * `Other flags` > `--warnon:1182`
   * `Treat warnings as errors` > `All`
 
