@@ -1,7 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/awbxjohei2cpxnsp?svg=true)](https://ci.appveyor.com/project/tatsuya/fsharp-cheat-sheet)
 
 # Best practices in settings
-* `F# Power Tools` > `Configuration` > `Project Cache Size` > 0
+* `F# Power Tools` > `Configuration` > `Project Cache Size` > `0`
 * Project > `Properties` > `Build`
   * `Other flags` > `--warnon:1182`
   * `Treat warnings as errors` > `All`
