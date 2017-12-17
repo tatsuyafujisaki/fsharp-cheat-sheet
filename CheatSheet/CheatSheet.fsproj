@@ -58,14 +58,15 @@
     <Content Include="packages.config" />
     <Content Include="App.config" />
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Process1.fs" />
+    <Compile Include="Const.fs" />
+    <Compile Include="U.fs" />
     <Compile Include="Algorithm.fs" />
     <Compile Include="Bool.fs" />
     <Compile Include="String1.fs" />
     <Compile Include="DateTime1.fs" />
     <Compile Include="Converter.fs" />
-    <Compile Include="Process1.fs" />
     <Compile Include="Collection.fs" />
-    <Compile Include="U.fs" />
     <Compile Include="Io.fs" />
     <Compile Include="Network.fs" />
     <Compile Include="JsonParser.fs" />
