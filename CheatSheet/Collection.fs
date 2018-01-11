@@ -48,6 +48,15 @@ let separateLast xs =
 
     separateLast' [] xs
 
+let replaceLast xs newLast =
+    let rec replaceLast' acc xs' =
+        match xs' with
+        | [] -> invalidOp "The list is empty."
+        | [_] -> List.rev acc @ [ newLast ]
+        | head :: tail -> replaceLast' (head :: acc) tail
+
+    replaceLast' [] xs
+
 let insertIfCharExistsInEndOfPreviousLine (ss: string List) (c : char) sToInsert =
     let countGivenCharInEnd (s : string) c = s.Length - s.TrimEnd([|c|]).Length
 
