@@ -171,5 +171,8 @@ match person with
 * [failwith](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/exception-handling/the-failwith-function)
 * [failwithf](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/extratopleveloperators.failwithf%5B't%2C'result%5D-function-%5Bfsharp%5D)
 * [invalidArg](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/exception-handling/the-invalidArg-function)
+```fsharp
+invalidArg "parameter1" (sprintf "function1 expected to take foo or bar, but took %s." parameter1)
+```
 * [invalidOp](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.invalidop%5b%27t%5d-function-%5bfsharp%5d)
 * [nullArg](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.nullarg%5b%27t%5d-function-%5bfsharp%5d)
