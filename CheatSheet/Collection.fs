@@ -21,7 +21,7 @@ let rec myLast = function
 let rec secondToLast = function
   | [] -> invalidOp "The list is empty."
   | [_] -> invalidOp "The list has only one element." 
-  | head :: _ :: [] -> head
+  | head :: [_] -> head
   | _ :: tail -> secondToLast tail
 
 let excludeFirst =
