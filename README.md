@@ -52,7 +52,7 @@ let xs = [ 1 .. 5 ]
 // Use properties rather than functions
 printfn "%A" (xs.IsEmpty) // Simpler than (List.isEmpty xs)
 printfn "%A" (xs.Length) // Simpler than (List.length xs)
-printfn "%A" (xs.Head) // Simpler than (List.head xs)
+printfn "%A" (xs.Head) // Simpler than (List.head xs) or (xs.Item 0) or (List.item 0 xs)
 printfn "%A" (xs.Tail) // Simpler than (List.tail xs)
 printfn "%A" (xs.[2]) // Simpler than (xs.Item 2) or (List.item 2 xs)
 ```
