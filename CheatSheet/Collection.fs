@@ -1,9 +1,8 @@
 ﻿module Collection
 
-open System.Linq
-
 // Explanatory wrapper
 // There is no such function as "Set.choose".
+// Explicit argument is to avoid the FS0030 (Value restriction) error.
 let excludeNone1 xs = Array.choose id xs
 let excludeNone2 xs = Seq.choose id xs
 let excludeNone3 xs = List.choose id xs
@@ -12,7 +11,10 @@ let excludeNone3 xs = List.choose id xs
 // There is no such function as "Array.last" or "List.last" but "Seq.last" takes not only a sequence but also an array, a list or a set.
 let last = Seq.last
 
-// In reality, use Seq.last.
+// Explanatory wrapper
+let repeat = List.replicate
+
+// In practice, use Seq.last.
 let rec myLast = function
   | [head] -> head
   | _ :: tail -> myLast tail
@@ -24,44 +26,32 @@ let rec secondToLast = function
   | head :: [_] -> head
   | _ :: tail -> secondToLast tail
 
-let excludeFirst =
-    function
+let excludeFirst = function
     | [] -> invalidOp "The list is empty."
     | _ :: tail -> tail
 
+// Explicit argument is to avoid the FS0030 (Value restriction) error.
 let excludeLast xs =
-    let rec excludeLast' acc =
-        function
+    let rec excludeLast' acc = function
         | [] -> invalidOp "The list is empty."
         | [_] -> List.rev acc
         | head :: tail -> excludeLast' (head :: acc) tail
 
     excludeLast' [] xs
 
-// Returns (listWithoutLast, last)
+// Explicit argument is to avoid the FS0030 (Value restriction) error.
 let separateLast xs =
-    let rec separateLast' acc xs' =
-        match xs' with
+    let rec separateLast' acc = function
         | [] -> invalidOp "The list is empty."
         | [head] -> List.rev acc, head
         | head :: tail -> separateLast' (head :: acc) tail
 
     separateLast' [] xs
 
-let replaceLast xs newLast =
-    let rec replaceLast' acc xs' =
-        match xs' with
+let replaceLast newLast =
+    let rec replaceLast' acc = function
         | [] -> invalidOp "The list is empty."
         | [_] -> List.rev acc @ [ newLast ]
         | head :: tail -> replaceLast' (head :: acc) tail
 
-    replaceLast' [] xs
-
-let insertIfCharExistsInEndOfPreviousLine (ss: string List) (c : char) sToInsert =
-    let countGivenCharInEnd (s : string) c = s.Length - s.TrimEnd([|c|]).Length
-
-    ss
-    |> List.map (fun s -> match s.EndsWith(c.ToString()) with
-                          | true -> s.TrimEnd([|c|]) :: (Seq.toList (Enumerable.Repeat(sToInsert, (countGivenCharInEnd s c))))
-                          | false -> [s])
-    |> List.concat
+    replaceLast' []

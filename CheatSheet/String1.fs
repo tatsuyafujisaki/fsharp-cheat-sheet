@@ -4,6 +4,9 @@ open Microsoft.VisualBasic
 open System
 open System.Text.RegularExpressions
 
+// Explanatory wrapper
+let repeat count s = String.replicate count s
+
 let rec concat = function
     | [] -> ""
     | [head] -> head

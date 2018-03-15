@@ -1,6 +1,6 @@
 ﻿module Test
 
-let mutableVsRef() = 
+let mutableVsRef () = 
     // Use mutable because its performance is better than that of ref.
     // ref is a wrapper of mutable.
     let a = ref 1 // allocates a new record on the heap

@@ -3,7 +3,6 @@
 open System
 open System.Data
 open System.Data.SqlClient
-open System.Diagnostics
 open System.IO
 open System.Transactions
 
@@ -11,7 +10,8 @@ open System.Transactions
 let unSome (x : 'T option) = x.Value
 
 // Explanatory wrapper
-let concat (ss : string seq) = String.Concat ss // Simpler than (List.reduce (+) ss)
+// Simpler than (List.reduce (+) ss)
+let concat (ss : string seq) = String.Concat ss
 
 let readAllBytes (stream : Stream) = 
     use ms = new MemoryStream()
@@ -55,13 +55,13 @@ let executeNonQuery connectionString commandText =
         c.ExecuteNonQuery()
     with e -> failwithf "%A%A" e.Message e.StackTrace
 
-let importToDb connectionString tableName (dt : DataTable) = 
+let importToDatabase connectionString tableName (dt : DataTable) = 
     try 
         use ts = new TransactionScope()
         use sc = new SqlConnection(connectionString)
         sc.Open()
         use c = sc.CreateCommand()
-        c.CommandText <- "DELETE FROM" + tableName
+        c.CommandText <- "DELETE FROM " + tableName
         c.ExecuteNonQuery() |> ignore
         use sbc = new SqlBulkCopy(sc)
         sbc.DestinationTableName <- tableName

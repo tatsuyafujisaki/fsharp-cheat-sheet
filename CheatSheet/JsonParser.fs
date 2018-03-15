@@ -5,12 +5,12 @@ open FParsec
 let private stringReturnCI s result = pstringCI s >>% result
 
 let private stringLiteral =
-    let escape =  anyOf "\\nrt\""
-                  |>> function
-                      | 'n' -> "\n"
-                      | 'r' -> "\r"
-                      | 't' -> "\t"
-                      | c   -> string c
+    let escape = anyOf "\\nrt\""
+                 |>> function
+                     | 'n' -> "\n"
+                     | 'r' -> "\r"
+                     | 't' -> "\t"
+                     | c   -> string c
 
     let unicodeEscape =
         let hex2int c = (int c &&& 15) + (int c >>> 6)*9

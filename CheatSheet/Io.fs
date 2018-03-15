@@ -1,6 +1,5 @@
 ﻿module Io
 
-open FSharp.Data
 open Process1
 open System
 open System.IO
@@ -11,19 +10,19 @@ let desktopize path = Path.Combine(Environment.GetFolderPath(Environment.Special
 let printMap path map =
     File.WriteAllLines (path, map |> Map.toSeq |> Seq.map (fun (k, v) -> sprintf "%A = %A" k v))
 
-let rec readName() = 
+let rec readName () = 
     printf "Enter name: "
     match Console.ReadLine().Trim() with
-    | "" -> readName()
+    | "" -> readName ()
     | s -> s
 
-let rec readAge() = 
+let rec readAge () = 
     printf "Enter age: "
     match Int32.TryParse(Console.ReadLine()) with
     | true, n when n > 0 -> n
-    | _ -> readAge()
+    | _ -> readAge ()
 
-let readValues() = 
+let readValues () = 
     let rec readValues' vs = 
         printf "Enter a value, or press enter to end: "
         match Console.ReadLine() with
@@ -35,21 +34,20 @@ let readValues() =
             |> readValues'
     readValues' []
 
-let rec readFilePath() = 
+let rec readFilePath () = 
     printf "Enter file path: "
     let filePath = Console.ReadLine()
-    if File.Exists(filePath) then filePath
-    else readFilePath()
+    match File.Exists(filePath) with
+    | true -> filePath
+    | false -> readFilePath ()
 
-let rec print = 
-    function
+let rec print = function
     | [] -> ()
     | x :: tail -> 
         printfn "%A" x
         print tail
 
-let rec reversePrint = 
-    function
+let rec reversePrint = function
     | [] -> ()
     | x :: tail -> 
         reversePrint tail
@@ -70,8 +68,6 @@ let copyDirectory sourceDirectory destinationDirectory =
     startProcess "xcopy" (sprintf "%A %A /e /i /y" sourceDirectory destinationDirectory)
 
 let rec walk dir pattern = 
-    seq { 
-        yield! Directory.EnumerateFiles(dir, pattern)
-        for d in Directory.EnumerateDirectories(dir) do
-            yield! walk d pattern
-    }
+    seq { yield! Directory.EnumerateFiles(dir, pattern)
+          for d in Directory.EnumerateDirectories(dir) do
+              yield! walk d pattern }
