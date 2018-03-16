@@ -7,6 +7,10 @@ open System.Text.RegularExpressions
 // Explanatory wrapper
 let repeat count s = String.replicate count s
 
+// Explanatory wrapper
+// There is no such function as string.Head.
+let getChar (s : string) i = s.[i]
+
 let rec concat = function
     | [] -> ""
     | [head] -> head

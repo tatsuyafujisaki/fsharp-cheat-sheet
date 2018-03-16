@@ -58,6 +58,7 @@
     <Content Include="packages.config" />
     <Content Include="App.config" />
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Meta.fs" />
     <Compile Include="Process1.fs" />
     <Compile Include="Const.fs" />
     <Compile Include="U.fs" />

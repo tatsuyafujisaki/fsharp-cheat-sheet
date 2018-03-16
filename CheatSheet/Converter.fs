@@ -19,15 +19,6 @@ let getValues map = map |> Map.toSeq |> Seq.map snd
 let toRadian degree = (Math.PI / 180.0) * degree
 let toDegree radian = (180.0 / Math.PI) * radian
 
-// Explanatory wrapper
-let flattenArrays = Array.concat
-
-// Explanatory wrapper
-let flattenLists = List.concat
-
-// Explanatory wrapper
-let flattenSequences = Seq.concat
-
 // seq { key1, seq { v1-1, v1-2 }; key2, seq { v2-1, v2-2 }}
 let groupTuples xs = 
     xs
