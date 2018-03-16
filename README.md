@@ -172,7 +172,8 @@ match person with
 * [failwithf](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/extratopleveloperators.failwithf%5B't%2C'result%5D-function-%5Bfsharp%5D)
 * [invalidArg](https://docs.microsoft.com/dotnet/articles/fsharp/language-reference/exception-handling/the-invalidArg-function)
 ```fsharp
-invalidArg "parameter1" (sprintf "parameter1 expected to be foo or bar, but was %s." parameter1)
+invalidArg "var1" (sprintf "Must be foo, but was %s." var1)
+invalidArg "var1" (sprintf "Must be %s, but was %s." (toUnionCase UnionCase1) (toUnionCase var1))
 ```
 * [invalidOp](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.invalidop%5b%27t%5d-function-%5bfsharp%5d)
 * [nullArg](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.nullarg%5b%27t%5d-function-%5bfsharp%5d)
