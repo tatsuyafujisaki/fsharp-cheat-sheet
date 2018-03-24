@@ -14,11 +14,6 @@ let excludeNone1 xs = Seq.choose id xs
 let excludeNone2 xs = Array.choose id xs
 let excludeNone3 xs = List.choose id xs
 
-// Explanatory wrapper
-let flatten1 = Seq.concat
-let flatten2 = Array.concat
-let flatten3 = List.concat
-
 // In practice, use Seq.last.
 let rec myLast = function
   | [head] -> head

@@ -5,17 +5,11 @@ open System
 open System.Text.RegularExpressions
 
 // Explanatory wrapper
-let repeat count s = String.replicate count s
+let repeat count = String.replicate count
 
 // Explanatory wrapper
 // There is no such function as string.Head.
 let getChar (s : string) i = s.[i]
-
-let rec concat = function
-    | [] -> ""
-    | [head] -> head
-    | head :: [second] -> head + " and " + second
-    | head :: tail -> head + ", " + (concat tail)
 
 let split (s : string) (separator : string) =
     s.Split([| separator |], StringSplitOptions.None)
