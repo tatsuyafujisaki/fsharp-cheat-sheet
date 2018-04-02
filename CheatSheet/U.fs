@@ -18,7 +18,7 @@ let readAllBytes (stream : Stream) =
     stream.CopyTo(ms)
     ms.ToArray()
 
-let uncompressZ path = Process1.startProcess2 "7z.exe" (Some(sprintf @"e -y -o ""%s"" ""%s.Z""" (Path.GetTempPath()) path))
+let uncompressZ path = sprintf @"e -y -o ""%s"" ""%s.Z""" (Path.GetTempPath()) path |> Process1.startAndForget "7z.exe"
 
 let toDataTable (dsv : string) delimiter hasHeading = 
     let lines = dsv.Split([| '\n' |])

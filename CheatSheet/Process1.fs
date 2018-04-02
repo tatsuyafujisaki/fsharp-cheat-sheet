@@ -2,23 +2,29 @@
 
 open System.Diagnostics
 
-let startProcess fileName arguments = 
-    use p = Process.Start(fileName, arguments)
-    p.Start() |> ignore
-    p.WaitForExit()
+let startAndForget fileName arguments = 
+    Process.Start(fileName, arguments) |> ignore
 
-let startProcess2 fileName (arguments : string option) = 
-    let psi = 
-        match arguments with
-        | Some args -> ProcessStartInfo(fileName, args)
-        | None -> ProcessStartInfo(fileName)
-    psi.CreateNoWindow <- true
-    psi.UseShellExecute <- false
-    psi.WindowStyle <- ProcessWindowStyle.Hidden
-    psi.RedirectStandardInput <- true
-    psi.RedirectStandardOutput <- true
-    psi.RedirectStandardError <- true
-    let p = Process.Start(psi)
-    p.WaitForExit()
-    if p.ExitCode <> 0 then failwithf "%A" (p.StandardError.ReadToEnd())
-    p.StandardOutput.ReadToEnd()
+let startAndWait fileName arguments = 
+    use p = Process.Start(fileName, arguments)
+
+    let millisecondsToTimout = 60_000
+
+    match p.WaitForExit(millisecondsToTimout) with
+    | true -> p.ExitCode
+    | false -> sprintf "%s(%s) did not exit in %d milliseconds and timed out." fileName arguments millisecondsToTimout |> invalidOp
+
+let startAndGetResult fileName arguments = 
+    let p = Process.Start(ProcessStartInfo(FileName = fileName,
+                                           Arguments = arguments,
+                                           CreateNoWindow = true,
+                                           UseShellExecute = false,
+                                           WindowStyle = ProcessWindowStyle.Hidden,
+                                           RedirectStandardOutput = true,
+                                           RedirectStandardError = true))
+
+    let millisecondsToTimout = 60_000
+
+    match p.WaitForExit(millisecondsToTimout) with
+    | true -> p.ExitCode, p.StandardOutput.ReadToEnd(), p.StandardError.ReadToEnd()
+    | false -> sprintf "%s(%s) did not exit in %d milliseconds and timed out." fileName arguments millisecondsToTimout |> invalidOp

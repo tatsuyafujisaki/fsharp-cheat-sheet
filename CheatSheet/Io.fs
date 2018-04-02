@@ -65,7 +65,7 @@ let deleteFile path =
 
 let copyDirectory sourceDirectory destinationDirectory = 
     deleteDirectory destinationDirectory
-    startProcess "xcopy" (sprintf "%A %A /e /i /y" sourceDirectory destinationDirectory)
+    startAndForget "xcopy" (sprintf "%A %A /e /i /y" sourceDirectory destinationDirectory)
 
 let rec walk dir pattern = 
     seq { yield! Directory.EnumerateFiles(dir, pattern)
