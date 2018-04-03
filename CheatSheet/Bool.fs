@@ -4,6 +4,8 @@ open System
 
 let eqIgnoreCase (s1 : string) s2 = s1.Equals(s2, StringComparison.OrdinalIgnoreCase)
 
+let equals a b = (a - b |> abs) <= Double.Epsilon
+
 // Explanatory wrapper
 let isSome (x : 'T option) = x.IsSome
 
