@@ -22,8 +22,8 @@ let IsNotZero x =
 let containsIgnoreCase (s : string) findMe =
     -1 < s.IndexOf(findMe, StringComparison.OrdinalIgnoreCase)
 
-let isCommentLine (s : string) =
-    s.TrimStart().[0] = '#'
+let areAllDigits xs =
+    xs |> Seq.forall Char.IsDigit
 
 let areSameElements xs =
     xs |> (Seq.distinct >> Seq.length) = 1
