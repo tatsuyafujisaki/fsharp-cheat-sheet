@@ -15,12 +15,11 @@ let rec factorial = function
     | 0 | 1 -> 1
     | n -> n * factorial (n - 1)
 
-let rec gcd a b = 
-    match b with
+let rec gcd a = function
     | 0 -> a
-    | _ -> match b < a with
-           | true -> gcd b (a - b)
-           | false -> gcd (b - a) a
+    | b -> gcd b (a % b)
+
+let rec lcm a b = a * b / (gcd a b)
 
 let fizzBuzz n =
     match n % 3, n % 5 with
