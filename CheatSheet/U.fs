@@ -18,13 +18,12 @@ let readAllBytes (stream : Stream) =
     stream.CopyTo(ms)
     ms.ToArray()
 
-let uncompressZ path = sprintf @"e -y -o ""%s"" ""%s.Z""" (Path.GetTempPath()) path |> Process1.startAndForget "7z.exe"
-
 let toDataTable (dsv : string) delimiter hasHeading = 
     let lines = dsv.Split([| '\n' |])
     let columnCount = (lines.[0]).Split([| delimiter |]).Length
     let dt = new DataTable()
-    if hasHeading then 
+    match hasHeading with
+    | true ->
         let columnNames = (lines.[0]).Split([| delimiter |])
         for i in 0..columnCount - 1 do
             dt.Columns.Add(new DataColumn(columnNames.[i]))
@@ -32,7 +31,7 @@ let toDataTable (dsv : string) delimiter hasHeading =
             let row = dt.NewRow()
             row.ItemArray <- line.Split([| delimiter |]) |> Array.map box
             dt.Rows.Add(row)
-    else 
+    | false ->
         for _ in 1..columnCount do
             dt.Columns.Add(new DataColumn())
         for line in lines do
@@ -53,7 +52,8 @@ let executeNonQuery connectionString commandText =
         use c = sc.CreateCommand()
         c.CommandText <- commandText
         c.ExecuteNonQuery()
-    with e -> failwithf "%A%A" e.Message e.StackTrace
+    with
+        e -> failwithf "%A%A" e.Message e.StackTrace
 
 let importToDatabase connectionString tableName (dt : DataTable) = 
     try 
@@ -67,9 +67,5 @@ let importToDatabase connectionString tableName (dt : DataTable) =
         sbc.DestinationTableName <- tableName
         sbc.WriteToServer(dt)
         ts.Complete()
-    with e -> failwithf "%A%A" e.Message e.StackTrace
-
-let blockProductionAccess (connectionString : string) = 
-    let productionDatabase = "productionDatabase1"
-    if System.Diagnostics.Debugger.IsAttached && -1 < connectionString.IndexOf(productionDatabase) then 
-        raise (InvalidOperationException("You cannot access production database from Visual Studio."))
+    with
+        e -> failwithf "%A%A" e.Message e.StackTrace

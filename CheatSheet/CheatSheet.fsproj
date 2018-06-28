@@ -74,8 +74,8 @@
     <Compile Include="Io.fs" />
     <Compile Include="Network.fs" />
     <Compile Include="JsonParser.fs" />
-    <Compile Include="Test.fs" />
     <Compile Include="Database.fs" />
+    <Compile Include="MutableVsRefSample.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

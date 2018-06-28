@@ -10,7 +10,7 @@ let startAndWait fileName arguments =
 
     let millisecondsToTimout = 60_000
 
-    match p.WaitForExit(millisecondsToTimout) with
+    match p.WaitForExit millisecondsToTimout with
     | true -> p.ExitCode
     | false -> sprintf "%s(%s) did not exit in %d milliseconds and timed out." fileName arguments millisecondsToTimout |> invalidOp
 
@@ -25,6 +25,6 @@ let startAndGetResult fileName arguments =
 
     let millisecondsToTimout = 60_000
 
-    match p.WaitForExit(millisecondsToTimout) with
+    match p.WaitForExit millisecondsToTimout with
     | true -> p.ExitCode, p.StandardOutput.ReadToEnd(), p.StandardError.ReadToEnd()
     | false -> sprintf "%s(%s) did not exit in %d milliseconds and timed out." fileName arguments millisecondsToTimout |> invalidOp

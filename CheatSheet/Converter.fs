@@ -59,11 +59,13 @@ let toListOfRecord (dt : DataTable) =
 
 let toDataRows (dt : DataTable) = dt.Rows |> Seq.cast<DataRow>
 
-// Explicit argument is to avoid the FS0030 (Value restriction) error.
-let dictionaryToMap =
-    Seq.map (|KeyValue|) >> Map.ofSeq
+// The explicit argument is to avoid the FS0030 (Value restriction) error
+let toMap dotNetDictionary = dotNetDictionary |> Seq.map (|KeyValue|) |> Map.ofSeq
 
-// JSON to map
-let jsonToMap json =
-    let jss = JavaScriptSerializer()
-    dictionaryToMap (jss.Deserialize<Dictionary<string, obj>>(json))
+// The explicit argument is to avoid the FS0030 (Value restriction) error
+let serializeJSON o = JavaScriptSerializer().Serialize o
+
+let deserializeJSON json =
+    JavaScriptSerializer().Deserialize<Dictionary<string, obj>> json
+    |> Seq.map (|KeyValue|)
+    |> Map.ofSeq

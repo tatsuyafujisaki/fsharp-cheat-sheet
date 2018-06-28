@@ -19,14 +19,12 @@ let IsNotZero x =
     | true, x -> x <> 0.0
     | _ -> false
 
-let containsIgnoreCase (s : string) findMe =
-    -1 < s.IndexOf(findMe, StringComparison.OrdinalIgnoreCase)
+let containsIgnoreCase (s : string) findMe = -1 < s.IndexOf(findMe, StringComparison.OrdinalIgnoreCase)
 
-let areAllDigits xs =
-    xs |> Seq.forall Char.IsDigit
+// The explicit argument is to avoid the FS0030 (Value restriction) error
+let areAllDigits xs = xs |> Seq.forall Char.IsDigit
 
-let areSameElements xs =
-    xs |> (Seq.distinct >> Seq.length) = 1
+// The explicit argument is to avoid the FS0030 (Value restriction) error
+let areSameElements xs = (xs |> Seq.distinct |> Seq.length) = 1
 
-let areSameLists f (xs : 'a list) (ys : 'a list) =
-    xs.Length = ys.Length && List.forall2 f xs ys
+let areSameLists f (xs : 'a list) (ys : 'a list) = xs.Length = ys.Length && List.forall2 f xs ys

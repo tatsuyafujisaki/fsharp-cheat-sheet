@@ -7,8 +7,7 @@ open System.IO
 // F# cannot define a variadic function. (A variadic function is a function of indefinite arity.
 let desktopize path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop, path))
 
-let printMap path map =
-    File.WriteAllLines (path, map |> Map.toSeq |> Seq.map (fun (k, v) -> sprintf "%A = %A" k v))
+let printMap path map = File.WriteAllLines (path, map |> Map.toSeq |> Seq.map (fun (k, v) -> sprintf "%A = %A" k v))
 
 let rec readName () = 
     printf "Enter name: "
@@ -28,7 +27,7 @@ let readValues () =
         match Console.ReadLine() with
         | "" -> List.rev vs
         | s -> 
-            match Double.TryParse(s) with
+            match Double.TryParse s with
             | true, v -> v :: vs
             | _ -> vs
             |> readValues'
@@ -37,7 +36,7 @@ let readValues () =
 let rec readFilePath () = 
     printf "Enter file path: "
     let filePath = Console.ReadLine()
-    match File.Exists(filePath) with
+    match File.Exists filePath with
     | true -> filePath
     | false -> readFilePath ()
 
@@ -55,13 +54,17 @@ let rec reversePrint = function
 
 let deleteDirectory path = 
     // Avoid DirectoryNotFoundException
-    if Directory.Exists(path) then Directory.Delete(path, true)
+    match Directory.Exists path with
+    | true -> Directory.Delete(path, true)
+    | false -> ()
 
 let deleteFile path = 
     // Avoid ArgumentNullException by File.Delete("")
     // Avoid ArgumentException by File.Delete(null)
     // Avoid DirectoryNotFoundException by File.Delete(@"C:\NonExistingDirectory\Foo.txt")
-    if File.Exists(path) then File.Delete(path)
+    match File.Exists path with
+    | true -> File.Delete path
+    | false -> ()
 
 let copyDirectory sourceDirectory destinationDirectory = 
     deleteDirectory destinationDirectory
@@ -69,5 +72,5 @@ let copyDirectory sourceDirectory destinationDirectory =
 
 let rec walk dir pattern = 
     seq { yield! Directory.EnumerateFiles(dir, pattern)
-          for d in Directory.EnumerateDirectories(dir) do
+          for d in Directory.EnumerateDirectories dir do
               yield! walk d pattern }

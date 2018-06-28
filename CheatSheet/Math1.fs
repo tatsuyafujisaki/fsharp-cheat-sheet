@@ -12,8 +12,8 @@ let roundToNearestWholeNumber (x : decimal) = Math.Round(x, MidpointRounding.Awa
 // No F# operator equivalent to Math.Round(x, fractionalDigitCount, MidpointRounding.AwayFromZero)
 let round1 (x : decimal) fractionalDigitCount = Math.Round(x, fractionalDigitCount, MidpointRounding.AwayFromZero)
 
-let roundToNearestWholeNumberAsString (x : decimal) = x.ToString("#,##0")
-let roundToTwoDecimalPlacesAsString (x : decimal) = x.ToString("#,##0.##")
+let roundToNearestWholeNumberAsString (x : decimal) = x.ToString "#,##0"
+let roundToTwoDecimalPlacesAsString (x : decimal) = x.ToString "#,##0.##"
 
 // Explanatory wrapper
 let roundUpToNearestWholeNumber = ceil

@@ -16,9 +16,11 @@ let rec factorial = function
     | n -> n * factorial (n - 1)
 
 let rec gcd a b = 
-    if b = 0 then a
-    elif b < a then gcd b (a - b)
-    else gcd (b - a) a
+    match b with
+    | 0 -> a
+    | _ -> match b < a with
+           | true -> gcd b (a - b)
+           | false -> gcd (b - a) a
 
 let fizzBuzz n =
     match n % 3, n % 5 with

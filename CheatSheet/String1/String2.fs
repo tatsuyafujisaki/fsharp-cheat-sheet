@@ -11,18 +11,24 @@ let repeat count = String.replicate count
 // There is no such function as string.Head.
 let getChar (s : string) i = s.[i]
 
-let split (s : string) (separator : string) =
-    s.Split([| separator |], StringSplitOptions.None)
+let split (s : string) (separator : string) = s.Split([| separator |], StringSplitOptions.None)
 
 let getBetween s from to1 inclusive =
-    let m = Regex.Match(s, (if inclusive then sprintf "(%s.*?%s)" from to1 else sprintf "%s(.*?)%s" from to1), RegexOptions.IgnoreCase)
-    if m.Success then Some (m.Groups.[1].Value) else None
+    let m = Regex.Match(s, (match inclusive with
+                            | true -> sprintf "(%s.*?%s)" from to1
+                            | false -> sprintf "%s(.*?)%s" from to1), RegexOptions.IgnoreCase)
 
-// https://msdn.microsoft.com/en-us/library/ms912047.aspx
-let zenkaku s = Strings.StrConv(s, VbStrConv.Wide, 1041)
+    match m.Success with
+    | true -> Some m.Groups.[1].Value
+    | false -> None
 
-// https://msdn.microsoft.com/en-us/library/ms912047.aspx
-let hankaku s = Strings.StrConv(s, VbStrConv.Narrow, 1041)
+let zenkaku s =
+    let japaneseLocaleID = 1041
+    Strings.StrConv(s, VbStrConv.Wide, japaneseLocaleID)
+
+let hankaku s =
+    let japaneseLocaleID = 1041
+    Strings.StrConv(s, VbStrConv.Narrow, japaneseLocaleID)
 
 let zenkakuWithUnicodeEscaped (s : string) =
     let unicodeToEscape = '®'
