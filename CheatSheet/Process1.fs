@@ -2,6 +2,13 @@
 
 open System.Diagnostics
 
+let killOldSelf () =
+    let me = Process.GetCurrentProcess()
+
+    Process.GetProcessesByName me.ProcessName
+    |> Array.where (fun p -> p.Id <> me.Id)
+    |> Array.iter (fun p -> p.Kill())
+    
 let startAndForget fileName arguments = 
     Process.Start(fileName, arguments) |> ignore
 
